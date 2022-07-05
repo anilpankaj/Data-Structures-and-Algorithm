@@ -13,6 +13,7 @@ class Node{
 void Insertion(Node * &head, int data){
     if(head==NULL){
         head = new Node(data);
+        return;
     }
     Node * n = new Node(data);
     n->next = head;
@@ -24,9 +25,17 @@ Node* Reverse_list(Node * head){ //using recursion
         return head;
      }
      //otherwise
-     
-    
-
+     Node* shead = Reverse_list(head->next);
+     head->next->next = head;
+     head->next = NULL;
+     return shead;
+}
+void Print_list(Node * head){
+    while(head!=NULL){
+        cout<<head->data<<"-->";
+        head = head->next;
+    }
+    cout<<endl;
 }
 int main(){
     Node * head = NULL;
@@ -35,6 +44,9 @@ int main(){
     Insertion(head,3);
     Insertion(head,2);
     Insertion(head,1);
-    Reverse_list(head);
+    Print_list(head);
+    cout<<endl;
+    head = Reverse_list(head);
+    Print_list(head);
     return 0;
 }
