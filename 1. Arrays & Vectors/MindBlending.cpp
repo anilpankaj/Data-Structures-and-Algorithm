@@ -12,7 +12,7 @@ int main(){
     long temp1 = 1;
     long temp2 = 1;
 
-    //calculate left product of array
+    //calculate left product array
     pro[0] = temp1;
     for(int i=1;i<n;i++){
         temp1 *= arr[i-1];
