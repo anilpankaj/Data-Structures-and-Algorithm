@@ -8,7 +8,8 @@ int main(){
         cin>>arr[i];
     }
     int curnt = 0;
-    int max_sum = 0;
+    int max_sum = INT_MIN;
+    
     for(int i=0;i<n;i++){
         curnt = curnt + arr[i];
         if(max_sum<curnt){
@@ -17,6 +18,8 @@ int main(){
         if(curnt<0){
             curnt = 0;
         }
+        
+        
         /*if(curnt<0){
             curnt = 0;
         }
